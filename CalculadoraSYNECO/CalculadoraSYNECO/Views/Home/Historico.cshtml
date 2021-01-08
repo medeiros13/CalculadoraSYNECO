@@ -1,0 +1,10 @@
+﻿@model CalculadoraSYNECO.Models.ViewModels.CalculoViewModel
+@foreach (var calculo in Model.Calculos)
+{
+    <div class="row">
+        <p class="h4">@calculo.ToString()</p>
+    </div>
+}
+<div class="row">
+    <a class="btn btn-dark" asp-controller="Home" asp-action="Index">Voltar</a>
+</div>

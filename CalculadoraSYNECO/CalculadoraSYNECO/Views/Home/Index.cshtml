@@ -1,0 +1,40 @@
+﻿@model CalculadoraSYNECO.Models.ViewModels.CalculoViewModel
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div class="form-group">
+        <div class="row">
+            <label asp-for="Calculo.Numero1" class="col-lg-2"></label>
+            <input type="number" asp-for="Calculo.Numero1" class="col-lg-2" />
+        </div>
+        <div class="row">
+            <label asp-for="Calculo.Numero2" class="col-lg-2"></label>
+            <input type="number" asp-for="Calculo.Numero2" class="col-lg-2" />
+        </div>
+        <div class="row">
+            <label asp-for="Calculo.Operacao" class="col-lg-2"></label>
+            <select asp-for="Calculo.Operacao" class="col-lg-2" asp-items="Html.GetEnumSelectList<TipoOperacao>()">
+                <option selected="selected" value="">Select</option>
+            </select>
+        </div>
+        <div class="row">
+            <label asp-for="Calculo.Resultado" class="col-lg-2"></label>
+            <input type="number" disabled="disabled" class="col-lg-2" asp-for="Calculo.Resultado" />
+        </div>
+        <div class="row">
+            <input type="submit" value="Calcular" asp-action="Index" class="btn btn-dark" />
+        </div>
+    </div>
+</form>
+<form asp-controller="Home" asp-action="Limpar" method="get">
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" class="btn btn-dark" value="Limpar" />
+        </div>
+    </div>
+</form>
+<form asp-controller="Home" asp-action="Historico" method="get">
+    <div class="row">
+        <div class="form-group">
+            <input type="submit" class="btn btn-dark" value="Historico" />
+        </div>
+    </div>
+</form>
